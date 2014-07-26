@@ -18,7 +18,7 @@ typedef enum {
 typedef enum {
 	STYLE_CIRCLES,
 	STYLE_RECTANGLE,
-	STYLE_LINE,
+	STYLE_LINES,
 } BattBarStyle;
 
 typedef struct BattBarOps {
@@ -30,7 +30,7 @@ typedef struct BattBarOps {
 } BattBarOps;
 
 void init_battbar(BattBarOps ops, Window *window);
-void get_default_battbar_ops();
+BattBarOps get_default_battbar_ops();
 void refresh_battbar(BatteryChargeState charge);
 void deinit_battbar();
 void custom_battbar_value_load(int value);

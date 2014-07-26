@@ -5,15 +5,16 @@ Layer *battery_bar_layer;
 BattBarOps ops;
 AppTimer *anim_timer;
 BatteryChargeState global_charge;
+int battery_percent;
 
 BattBarOps get_default_battbar_ops(){
 	BattBarOps ops_return;
 	
 	ops_return.isWatchface = 1;
-	ops_return.BattBarTheme = THEME_LIGHT;
-	ops_return.BattBarAnim = ANIM_ONE_CHUNK;
-	ops_return.BattBarPos = POSITION_B;
-	ops_return.BattBarStyle = STYLE_CIRCLES;
+	ops_return.theme = THEME_LIGHT;
+	ops_return.anim = ANIM_ONE_CHUNK;
+	ops_return.pos = POSITION_B;
+	ops_return.style = STYLE_CIRCLES;
 	
 	return ops_return;
 }
@@ -30,12 +31,14 @@ void update_proc(Layer *layer, GContext *ctx){
 		graphics_context_set_fill_color(ctx, GColorBlack);
 	}
 	
-	if(charge.is_charging){
+	battery_percent = global_charge.charge_percent;
+	
+	if(global_charge.is_charging){
 		
 	}
 	
-	if(ops.style = STYLE_CIRCLES){
-		int height;
+	if(ops.style == STYLE_CIRCLES){
+		int height = 158;
 		if(ops.pos == POSITION_B){
 			height = 158;
 		}
@@ -62,7 +65,7 @@ void update_proc(Layer *layer, GContext *ctx){
 	}
 	else if(ops.style == STYLE_LINES){
 		if(ops.pos == POSITION_B){
-			height = 158;
+
 		}
 		else if(ops.pos == POSITION_T){
 			if(ops.isWatchface){
