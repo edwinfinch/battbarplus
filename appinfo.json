@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "edwin",
+    "longName": "BatteryBar+",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "shortName": "BatteryBar+",
+    "uuid": "6ed4a3e7-f2b3-4143-8574-f5ad90000839",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
