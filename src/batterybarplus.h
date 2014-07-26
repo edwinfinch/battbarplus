@@ -1,8 +1,6 @@
 #pragma once
 	
 typedef enum {
-	POSITION_L,
-	POSITION_R,
 	POSITION_B,
 	POSITION_T,
 } BattBarPos;
@@ -24,7 +22,7 @@ typedef enum {
 } BattBarStyle;
 
 typedef struct BattBarOps {
-	bool watchfaceIsTrue;
+	bool isWatchface;
 	BattBarTheme theme;
 	BattBarAnim anim;
 	BattBarPos pos;
@@ -37,3 +35,4 @@ void refresh_battbar(BatteryChargeState charge);
 void deinit_battbar();
 void custom_battbar_value_load(int value);
 void battbar_set_hidden(bool hidden);
+void override(uint8_t KEY, int value);
