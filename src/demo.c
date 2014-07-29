@@ -1,7 +1,7 @@
 #include <pebble.h>
 
 void init(){
-	
+	//Nothing, yet.
 }
 
 void deinit(){
